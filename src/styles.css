@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*scrise de mine*/
+
+.mdc-list-item__primary-text{ /*pt title Books*/
+
+    line-height: 100px !important;
+    text-shadow: 3px 3px rgb(97, 97, 183);
+    font-style: italic;
+    
+    
+}
+

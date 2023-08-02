@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../book.model';
 import { BookService } from './book-service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 /*@Component({
   template:`
@@ -15,7 +16,13 @@ import { BookService } from './book-service';
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.css']
+  styleUrls: ['./book-details.component.css'],
+  animations:[
+    trigger('fadeInOut', [
+      state('void',style({opacity: 0})),
+      transition(':enter, :leave', [animate(1000)]),
+    ]),
+  ],
 })
 
 export class BookDetailsComponent implements OnInit {

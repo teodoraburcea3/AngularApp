@@ -5,7 +5,7 @@
 </mat-toolbar>
 
 
-<mat-sidenav-container>
+<mat-sidenav-container class="grey-background">
   <!-- Side navigation bar -->
   <mat-sidenav #sidenav mode="side" opened="false">
     
@@ -19,20 +19,23 @@
     <div style="padding: 10px"></div>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="sidenav-books">
     <!-- Main content -->
     <mat-toolbar color="primary">
       <!-- Button to toggle the sidebar -->
-      <button mat-icon-button (click)="onToggleSidenavClick()">
+      <button class="bounce-button" mat-icon-button (click)="onToggleSidenavClick()">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
 
     <div style="padding: 200px">
-      <div *ngIf="selectedBook">
-        <h2>{{ selectedBook.title }}</h2>
+      <div *ngIf="selectedBook" class="book-details">
+        <img src="{{selectedBook.image}}" alt="Book Cover" class="book-cover">
+        <div [@fadeInOut] class="fade-in">
+        <h2  class="selectedBook-title">{{ selectedBook.title }}</h2>
         <p>Author: {{selectedBook.author}}</p>
         <p>Description: {{selectedBook.description}}</p>
+      </div>
       </div>
     </div>
   </mat-sidenav-content>
