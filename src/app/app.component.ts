@@ -8,17 +8,14 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations:[
-    trigger('bounce',[
-      animate(
-        'is',
-        keyframes([
-          style({transform: 'translateY(0)', offset:0}),
-          style({ transform: 'translateY(-30px)', offset: 0.4 }),
-          style({ transform: 'translateY(-15px)', offset: 0.6 }),
-          style({ transform: 'translateY(0)', offset: 1 })
-        ])
-      )
+  animations: [
+    trigger('bounce', [
+      transition(':enter', animate('1s', keyframes([
+        style({ transform: 'translateY(0)', offset: 0 }),
+        style({ transform: 'translateY(-30px)', offset: 0.4 }),
+        style({ transform: 'translateY(-15px)', offset: 0.6 }),
+        style({ transform: 'translateY(0)', offset: 1 })
+      ])))
     ])
   ]
 })
