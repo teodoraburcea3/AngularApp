@@ -1,0 +1,27 @@
+
+.mat-toolbar {
+
+  font-size: 40px; 
+  font-weight: 200;
+  font-family: 'Tangerine', serif; 
+  background-color: #870a0a;
+  align-items: center;
+  display: flex;
+  
+
+  }
+
+  .navbar-title{
+    font-size:50px;
+    font-family:'Tangerine', serif;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-list {
+
+    font-size: 50px; 
+    font-family: 'Tangerine', serif; 
+    
+
+  }

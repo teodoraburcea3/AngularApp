@@ -1,0 +1,40 @@
+<!-- Header with colorful background -->
+<mat-toolbar color="primary" style="height: 150px">
+  <a mat-list-item  (click) = "onTitleClick()" style="text-align:center;" >{{title}} </a>
+ 
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  <!-- Side navigation bar -->
+  <mat-sidenav #sidenav mode="side" opened="false">
+    
+<mat-nav-list class="navbar-list">
+  <a mat-list-item *ngFor="let book of books" [routerLink]="['/books', book.id]" (click) =  "onBookClick(book)" >
+    
+    <mat-icon>book</mat-icon>
+    {{ book.title }}</a>
+
+</mat-nav-list>
+    <div style="padding: 10px"></div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Main content -->
+    <mat-toolbar color="primary">
+      <!-- Button to toggle the sidebar -->
+      <button mat-icon-button (click)="onToggleSidenavClick()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div style="padding: 200px">
+      <div *ngIf="selectedBook">
+        <h2>{{ selectedBook.title }}</h2>
+        <p>Author: {{selectedBook.author}}</p>
+        <p>Description: {{selectedBook.description}}</p>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
