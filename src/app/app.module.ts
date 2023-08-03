@@ -11,11 +11,16 @@ import {MatListModule} from '@angular/material/list';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookService } from './book-details/book-service';
+import {MatTabLabel, MatTabsModule} from '@angular/material/tabs';
+import { ContributeComponent } from './contribute/contribute.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import { BookService } from './book-details/book-service';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule,
+   
   
   ],
   providers: [BookService],

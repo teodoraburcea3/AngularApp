@@ -1,9 +1,19 @@
 
 
-<div [@fadeInOut] class="fade-in">
-    <p>{{ book?.title }}</p>
-    <p>Author: {{ book?.author }}</p>
-    <p>Description: {{ book?.description }}</p>
+<div class="book-details" *ngIf="book">
+  <mat-tab-group>
+    <mat-tab label="Info">
+      <h2>{{book.title}}</h2>
+      <p>Author: {{book.author}}</p>
+      <p>Description: {{book.description}}</p>
+    </mat-tab>
+
+    <mat-tab label="Rating">
+      This is the rating
+    </mat-tab>
+
+    <mat-tab label="Buy">
+      Buy the book here
+    </mat-tab>
+  </mat-tab-group>
 </div>
-
-

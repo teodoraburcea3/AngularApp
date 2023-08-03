@@ -1,8 +1,15 @@
 <!-- Header with colorful background -->
 <mat-toolbar color="primary" style="height: 150px">
   <a mat-list-item  (click) = "onTitleClick()" style="text-align:center;" >{{title}} </a>
+
+  <button mat-icon-button routerLink="/contribute" class="contribute-button">
+    <mat-icon> add </mat-icon>
+    Contribute
+  </button>
  
 </mat-toolbar>
+
+
 
 
 <mat-sidenav-container class="grey-background">
@@ -19,6 +26,7 @@
     <div style="padding: 10px"></div>
   </mat-sidenav>
 
+ 
   <mat-sidenav-content class="sidenav-books">
     <!-- Main content -->
     <mat-toolbar color="primary">
@@ -28,16 +36,77 @@
       </button>
     </mat-toolbar>
 
-    <div style="padding: 200px">
-      <div *ngIf="selectedBook" class="book-details">
-        <img src="{{selectedBook.image}}" alt="Book Cover" class="book-cover">
-        <div [@fadeInOut] class="fade-in">
-        <h2  class="selectedBook-title">{{ selectedBook.title }}</h2>
-        <p>Author: {{selectedBook.author}}</p>
-        <p>Description: {{selectedBook.description}}</p>
+    <div *ngIf= "!selectedBook" class="introduction">
+      <h2>Welcome to the Books app!</h2>
+      <p>Check out some of the most appreciated books of all the times!</p>
+    </div>
+    
+
+    <div class="book-details">
+      <div *ngIf="selectedBook">
+
+        <div class="tabs-container">
+        <mat-tab-group class="tabs">
+
+          <mat-tab label="Info" class="info-tab">
+
+            <img src="{{selectedBook.image}}" alt="Book Cover" class="book-cover">
+        
+           
+           <h2  class="selectedBook-title">{{ selectedBook.title }}</h2>
+           <p>Author: {{selectedBook.author}}</p>
+           <p>Description: {{selectedBook.description}}</p>
+
+          </mat-tab>
+
+          <mat-tab label="Rating" class="rating-tab">
+            
+            
+            <p>Emag:</p>
+            <mat-icon *ngFor="let _ of [1,2,3,4,5]" class="star-icon" [ngClass]="{'star-filled':selectedBook.emagRating >= _}">star</mat-icon>
+
+            
+
+           
+              <p>Amazon:</p>
+              <mat-icon *ngFor="let _ of [1,2,3,4,5]" class="star-icon" [ngClass]="{'star-filled':selectedBook.amazonRating >= _}">star</mat-icon>
+
+            
+            
+
+            
+              <p>New York Times:</p>
+              <mat-icon *ngFor="let _ of [1,2,3,4,5]" class="star-icon" [ngClass]="{'star-filled':selectedBook.nyRating >= _}">star</mat-icon>
+            
+           
+          </mat-tab>
+
+
+
+          <mat-tab label="Buy" class="buy">
+           
+            <div class="buy-item>">
+              <a href="https://www.emag.ro/">Emag ❤ </a>
+              
+            </div>
+            <div class="buy-item">
+              <a href="https://www.libris.ro/">Libris ❤  </a>
+              
+            </div>
+            <div class="buy-item">
+              <a href="https://www.elefant.ro/">Elefant ❤ </a>
+            
+            </div>
+           
+          </mat-tab>
+          
+
+        </mat-tab-group>
+        
       </div>
       </div>
     </div>
+   
   </mat-sidenav-content>
 </mat-sidenav-container>
 

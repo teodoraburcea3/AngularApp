@@ -11,6 +11,7 @@
 
   }
 
+
   .navbar-title{
     font-size:50px;
     font-family:'Tangerine', serif;
@@ -21,7 +22,7 @@
  
   .grey-background{
     background-color: rgb(27, 26, 26);
-    height:83.9vh;
+    
   }
 
   .selectedBook-title{
@@ -31,24 +32,6 @@
     text-align: center;
     text-shadow: 3px 3px;
     
-  }
-
-
-  .book-details{
-
-    display: flex;
-    align-items: center;
-
-  }
-
-
-  .book-cover{
-
-    width: 150px;
-    height: 200px;
-    margin-right: 20px;
-    
-  
   }
 
   .fade-in{
@@ -78,3 +61,110 @@
 .bounce-button{
   animation: bounce 2s;
 }
+
+.introduction{
+
+  padding: 220px;
+  text-align: center;
+
+}
+
+.introduction h2{
+
+font-size: 60px;
+font-family: 'Brush Script MT', cursive;
+
+
+}
+
+.introduction p{
+
+  font-size: 30px;
+  font-family: 'papyrus', fantasy;
+
+}
+
+
+
+.book-cover{
+
+  width: 150px;
+  height: 200px;
+  margin-top: 150px;
+  
+
+}
+
+.book-details{
+
+  display: flex;
+  padding: 13px;
+  height: 700px;
+  
+}
+
+.book-details p{
+  font-size: 16px;
+  padding: 8px;
+  
+}
+
+.tabs{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+ 
+} 
+.tabs-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+
+
+.rating-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  
+}
+
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star-icon{
+  font-size: 24px;
+}
+
+.star-filled{
+
+  color: gold;
+}
+
+.buy{
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+
+
+
+
